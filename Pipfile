@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+snowflake-connector-python = "*"
+python-dotenv = "*"
+snowflake-sqlalchemy = "*"
+finnhub-python = "*"
+azure-mgmt-storage = "*"
+azure-storage-blob = "*"
+azure-mgmt-resource = "*"
+azure-mgmt-datafactory = "*"
+azure-identity = "*"
+
+[dev-packages]
+pylint = "*"
+black = "*"
+
+[requires]
+python_version = "3.8"

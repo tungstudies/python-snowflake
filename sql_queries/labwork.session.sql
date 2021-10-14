@@ -1,0 +1,51 @@
+USE ROLE ACCOUNTADMIN;
+SELECT CURRENT_ROLE();
+--
+DROP DATABASE IF EXISTS SALES CASCADE;
+CREATE DATABASE IF NOT EXISTS SALES;
+CREATE SCHEMA IF NOT EXISTS SALES.DIMENSIONS;
+CREATE OR REPLACE TABLE SALES.DIMENSIONS.PRODUCTS (
+        PRODUCT_NO INTEGER,
+        PRODUCT_NAME VARCHAR(500),
+        PRODUCT_PRICE DECIMAL(10, 2),
+        PRODUCT_CLASS VARCHAR(500)
+    );
+INSERT INTO SALES.DIMENSIONS.PRODUCTS
+VALUES (
+        1,
+        'Keyboard',
+        180.00,
+        'Computers'
+    );
+INSERT INTO SALES.DIMENSIONS.PRODUCTS
+VALUES (
+        2,
+        'Wireless Keyboard',
+        340.00,
+        'Computers'
+    );
+INSERT INTO SALES.DIMENSIONS.PRODUCTS
+VALUES (
+        3,
+        'Sport Wireless Keyboard',
+        620.00,
+        'Computers'
+    );
+INSERT INTO SALES.DIMENSIONS.PRODUCTS
+VALUES (
+        4,
+        'Classic Wireless Keyboard',
+        260.00,
+        'Computers'
+    );
+INSERT INTO SALES.DIMENSIONS.PRODUCTS
+VALUES (
+        5,
+        'Kid Keyboard Junior 1',
+        240.00,
+        'Computers'
+    );
+SELECT *
+FROM SALES.DIMENSIONS.PRODUCTS;
+DELETE FROM SALES.DIMENSIONS.PRODUCTS
+WHERE PRODUCT_NO = 5;
